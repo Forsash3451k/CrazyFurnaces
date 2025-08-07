@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "testmod:block/brickfurnace_block" },
+    "facing=south": { "model": "testmod:block/brickfurnace_block", "y": 180 },
+    "facing=west":  { "model": "testmod:block/brickfurnace_block", "y": 270 },
+    "facing=east":  { "model": "testmod:block/brickfurnace_block", "y": 90 }
+  }
+}

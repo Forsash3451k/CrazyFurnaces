@@ -1,6 +1,7 @@
 package com.example.examplemod;
 
 import com.example.examplemod.block.CustomBlock;
+import com.example.examplemod.block.BrickFurnace;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -37,9 +38,16 @@ public class ExampleMod
     public static final RegistryObject<Block> CUSTOM_BLOCK =
             BLOCKS.register("custom_block", CustomBlock::new);
 
+    public static final RegistryObject<Block> BRICKFURNACE_BLOCK =
+            BLOCKS.register("brickfurnace_block", BrickFurnace::new);
+
     public static final RegistryObject<Item> CUSTOM_BLOCK_ITEM =
             ITEMS.register("custom_block", () ->
                     new BlockItem(CUSTOM_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> BRICKFURNACE_BLOCK_ITEM =
+            ITEMS.register("brickfurnace_block", () ->
+                    new BlockItem(BRICKFURNACE_BLOCK.get(), new Item.Properties()));
 
     // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
@@ -48,6 +56,7 @@ public class ExampleMod
             .icon(() -> CUSTOM_BLOCK_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(CUSTOM_BLOCK_ITEM.get()); // Тут нужно прописывать предметы (items of blocks, not blocks)
+                output.accept(BRICKFURNACE_BLOCK_ITEM.get());
             }).build());
 
 

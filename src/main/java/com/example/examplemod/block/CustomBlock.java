@@ -53,4 +53,3 @@ public class CustomBlock extends Block {
         return InteractionResult.SUCCESS;
     }
 }
-
