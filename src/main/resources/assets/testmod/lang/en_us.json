@@ -1,5 +1,5 @@
 {
-  "item_group.testmod.example": "Your Mod",
+  "creativetab.tutorial_tab": "Our mod",
   "block.testmod.custom_block": "Wood Furnace",
   "block.testmod.brickfurnace_block": "Brick Furnace"
 }
