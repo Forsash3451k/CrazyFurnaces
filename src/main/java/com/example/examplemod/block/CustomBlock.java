@@ -2,8 +2,12 @@ package com.example.examplemod.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -40,4 +44,13 @@ public class CustomBlock extends Block {
     public RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
     }
+
+    @Override
+    public InteractionResult use(BlockState p_60503_, Level p_60504_, BlockPos p_60505_,
+                                 Player p_60506_, InteractionHand p_60507_, BlockHitResult p_60508_) {
+        p_60504_.playSound(p_60506_, p_60505_, SoundEvents.CREEPER_DEATH, SoundSource.BLOCKS,
+                1f, 1f);
+        return InteractionResult.SUCCESS;
+    }
 }
+
