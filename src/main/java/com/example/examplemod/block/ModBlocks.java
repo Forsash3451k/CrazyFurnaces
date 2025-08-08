@@ -2,6 +2,7 @@ package com.example.examplemod.block;
 
 import com.example.examplemod.ExampleMod;
 import com.example.examplemod.block.custom.BrickFurnace;
+import com.example.examplemod.block.custom.CustomBlock;
 import com.example.examplemod.item.ModItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -25,11 +26,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
 
-    public static final RegistryObject<Block> BRICKFURNACE = registerBlock("brickfurnace",
+    public static final RegistryObject<Block> BRICKFURNACE = registerBlock("brickfurnace_block",
             () -> new BrickFurnace(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     public static final RegistryObject<Block> CUSTOM_BLOCK = registerBlock("custom_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+            () -> new CustomBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

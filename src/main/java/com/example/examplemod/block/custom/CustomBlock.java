@@ -21,7 +21,7 @@ import net.minecraft.world.phys.BlockHitResult;
 public class CustomBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public CustomBlock() {
+    public CustomBlock(Properties pProperties) {
         super(Properties.of().strength(3.0f).sound(SoundType.STONE));
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }
