@@ -1,13 +1,14 @@
 package com.example.examplemod;
 
-import com.example.examplemod.block.ModBlocks;
-import com.example.examplemod.block.entity.ModBlockEntities;
-import com.example.examplemod.item.ModItems;
 import com.mojang.logging.LogUtils;
+import org.slf4j.Logger;
+
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,15 +18,18 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import org.slf4j.Logger;
+
+import com.example.examplemod.block.ModBlocks;
+import com.example.examplemod.block.entity.ModBlockEntities;
+import com.example.examplemod.item.ModItems;
 import com.example.examplemod.item.ModCreativeModTabs;
 import com.example.examplemod.screen.BrickFurnaceScreen;
 import com.example.examplemod.screen.ModMenuTypes;
-import net.minecraftforge.common.MinecraftForge;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleMod.MODID)
-public class ExampleMod
+@Mod(CrazyFurnacesMod.MODID)
+public class CrazyFurnacesMod
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "testmod";
@@ -36,7 +40,7 @@ public class ExampleMod
     private static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    public ExampleMod() {
+    public CrazyFurnacesMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModCreativeModTabs.register(modEventBus);

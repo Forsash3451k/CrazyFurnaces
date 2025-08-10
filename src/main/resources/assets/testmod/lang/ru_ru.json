@@ -1,5 +1,5 @@
 {
   "creativetab.tutorial_tab": "Наш мод",
-  "block.testmod.custom_block": "Деревянная печь",
-  "block.testmod.brickfurnace_block": "Кирпичная печь"
+  "block.testmod.wooden_furnace_block": "Деревянная печь",
+  "block.testmod.brick_furnace_block": "Кирпичная печь"
 }

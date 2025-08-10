@@ -27,7 +27,10 @@ public class BrickFurnace extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     public BrickFurnace(Properties pProperties) {
-        super(Properties.of().strength(3.0f).sound(SoundType.STONE));
+        super(Properties.of()
+                .strength(3.0f)
+                .sound(SoundType.STONE));
+
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 
@@ -43,13 +46,11 @@ public class BrickFurnace extends BaseEntityBlock {
     }
 
     @Override
-    public RenderShape getRenderShape(BlockState state) {
-        return RenderShape.MODEL;
-    }
+    public RenderShape getRenderShape(BlockState state) { return RenderShape.MODEL; }
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide()) {
+        if ( ! pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof BrickFurnaceBlockEntity) {
                 NetworkHooks.openScreen(((ServerPlayer)pPlayer), (BrickFurnaceBlockEntity)entity, pPos);

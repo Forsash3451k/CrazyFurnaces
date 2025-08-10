@@ -22,13 +22,16 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import com.example.examplemod.block.entity.*;
 import com.example.examplemod.item.ModItems;
 import com.example.examplemod.screen.BrickFurnaceMenu;
 
-public class BrickFurnaceBlockEntity extends BlockEntity implements MenuProvider {
+public class BrickFurnaceBlockEntity extends BlockEntity implements MenuProvider
+{
     private final ItemStackHandler itemHandler = new ItemStackHandler(2);
 
     private static final int INPUT_SLOT = 0;
@@ -69,7 +72,7 @@ public class BrickFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if(cap == ForgeCapabilities.ITEM_HANDLER) {
+        if (cap == ForgeCapabilities.ITEM_HANDLER) {
             return lazyItemHandler.cast();
         }
 
@@ -90,10 +93,10 @@ public class BrickFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for(int i = 0; i < itemHandler.getSlots(); i++) {
+        for (int i = 0; i < itemHandler.getSlots(); ++i) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
-        Containers.dropContents(this.level, this.worldPosition, inventory);
+        Containers.dropContents(this.level, this.worldPosition, inventory); //XXX
     }
 
     @Override
@@ -122,7 +125,8 @@ public class BrickFurnaceBlockEntity extends BlockEntity implements MenuProvider
         progress = pTag.getInt("brickfurnace.progress");
     }
 
-    public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
+    public void tick(Level pLevel, BlockPos pPos, BlockState pState)
+    {
         if(hasRecipe()) {
             increaseCraftingProgress();
             setChanged(pLevel, pPos, pState);
@@ -131,9 +135,8 @@ public class BrickFurnaceBlockEntity extends BlockEntity implements MenuProvider
                 craftItem();
                 resetProgress();
             }
-        } else {
-            resetProgress();
         }
+        else { resetProgress(); }
     }
 
     private void resetProgress() {
@@ -144,8 +147,8 @@ public class BrickFurnaceBlockEntity extends BlockEntity implements MenuProvider
         ItemStack result = new ItemStack(ModItems.SAPPHIRE.get(), 1);
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
-                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(
+                result.getItem(), this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }
 
     private boolean hasRecipe() {
@@ -168,6 +171,6 @@ public class BrickFurnaceBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private void increaseCraftingProgress() {
-        progress++;
+        ++progress;
     }
 }

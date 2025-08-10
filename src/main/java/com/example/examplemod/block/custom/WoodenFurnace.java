@@ -18,11 +18,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class CustomBlock extends Block {
+public class WoodenFurnace extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public CustomBlock(Properties pProperties) {
-        super(Properties.of().strength(3.0f).sound(SoundType.STONE));
+    public WoodenFurnace(Properties pProperties) {
+        super(Properties.of()
+                .strength(3.0f)
+                .sound(SoundType.STONE));
+
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 
@@ -44,7 +47,8 @@ public class CustomBlock extends Block {
 
     @Override
     public InteractionResult use(BlockState p_60503_, Level p_60504_, BlockPos p_60505_,
-                                 Player p_60506_, InteractionHand p_60507_, BlockHitResult p_60508_) {
+                                 Player p_60506_, InteractionHand p_60507_, BlockHitResult p_60508_)
+    {
         p_60504_.playSound(p_60506_, p_60505_, SoundEvents.CREEPER_DEATH, SoundSource.BLOCKS,
                 1f, 1f);
         return InteractionResult.SUCCESS;

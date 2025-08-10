@@ -1,7 +1,5 @@
 package com.example.examplemod.item;
 
-import com.example.examplemod.ExampleMod;
-import com.example.examplemod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -11,25 +9,26 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
+import com.example.examplemod.CrazyFurnacesMod;
+import com.example.examplemod.block.ModBlocks;
+
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ExampleMod.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CrazyFurnacesMod.MODID);
 
     public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SAPPHIRE.get()))
                     .title(Component.translatable("creativetab.tutorial_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(Items.DIAMOND);
+
                         pOutput.accept(ModItems.SAPPHIRE.get());
                         pOutput.accept(ModItems.RAW_SAPPHIRE.get());
 
-
-                        pOutput.accept(ModBlocks.CUSTOM_BLOCK.get());
-                        pOutput.accept(Items.DIAMOND);
-
+                        pOutput.accept(ModBlocks.RUBY_BLOCK.get());
                         pOutput.accept(ModBlocks.SAPPHIRE_BLOCK.get());
-
-                        pOutput.accept(ModBlocks.BRICKFURNACE.get());
-
+                        pOutput.accept(ModBlocks.WOODEN_FURNACE.get());
+                        pOutput.accept(ModBlocks.BRICK_FURNACE.get());
                     })
                     .build());
 

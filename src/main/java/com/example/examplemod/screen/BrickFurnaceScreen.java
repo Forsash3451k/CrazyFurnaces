@@ -1,7 +1,7 @@
 package com.example.examplemod.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.example.examplemod.ExampleMod;
+
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -9,9 +9,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
+import com.example.examplemod.CrazyFurnacesMod;
+
 public class BrickFurnaceScreen extends AbstractContainerScreen<BrickFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(ExampleMod.MODID, "textures/gui/gem_polishing_station_gui.png");
+            new ResourceLocation(CrazyFurnacesMod.MODID, "textures/gui/gem_polishing_station_gui.png");
 
     public BrickFurnaceScreen(BrickFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);

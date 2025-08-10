@@ -1,5 +1,5 @@
 {
   "creativetab.tutorial_tab": "Our mod",
-  "block.testmod.custom_block": "Wood Furnace",
-  "block.testmod.brickfurnace_block": "Brick Furnace"
+  "block.testmod.wooden_furnace_block": "Wood Furnace",
+  "block.testmod.brick_furnace_block": "Brick Furnace"
 }
