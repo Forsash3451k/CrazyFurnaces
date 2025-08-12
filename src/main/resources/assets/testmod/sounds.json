@@ -1,0 +1,7 @@
+{
+  "item/amogus_killed": {
+    "sounds": [
+      { "name": "testmod:item/amogus_killed", "stream": false }
+    ]
+  }
+}

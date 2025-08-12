@@ -13,7 +13,7 @@ import com.example.examplemod.CrazyFurnacesMod;
 
 public class BrickFurnaceScreen extends AbstractContainerScreen<BrickFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(CrazyFurnacesMod.MODID, "textures/gui/gem_polishing_station_gui.png");
+            new ResourceLocation(CrazyFurnacesMod.MOD_ID, "textures/gui/gem_polishing_station_gui.png");
 
     public BrickFurnaceScreen(BrickFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);

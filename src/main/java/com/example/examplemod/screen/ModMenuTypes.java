@@ -15,10 +15,10 @@ import com.example.examplemod.CrazyFurnacesMod;
 public class ModMenuTypes
 {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.MENU_TYPES, CrazyFurnacesMod.MODID);
+            DeferredRegister.create(ForgeRegistries.MENU_TYPES, CrazyFurnacesMod.MOD_ID);
 
     public static final RegistryObject<MenuType<BrickFurnaceMenu>> BRICKFURNACE_MENU =
-            registerMenuType("brickfurnacemenu", BrickFurnaceMenu::new);
+            registerMenuType("brick_furnace_menu", BrickFurnaceMenu::new);
 
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {

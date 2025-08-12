@@ -1,5 +1,9 @@
 {
-  "creativetab.tutorial_tab": "Наш мод",
+  "creativetab.tutorial_tab": "Безумные печки",
   "block.testmod.wooden_furnace_block": "Деревянная печь",
-  "block.testmod.brick_furnace_block": "Кирпичная печь"
+  "block.testmod.brick_furnace_block":  "Кирпичная печь",
+  "item.testmod.sapphire": "Сапфир",
+  "block.testmod.sapphire_block": "Cапфировый блок",
+  "item.testmod.amogus": "Амогус",
+  "item.testmod.killed_amogus": "ABOBUS"
 }

@@ -22,19 +22,19 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, CrazyFurnacesMod.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, CrazyFurnacesMod.MOD_ID);
 
     public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST)));
 
     public static final RegistryObject<Block> BRICK_FURNACE = registerBlock("brick_furnace_block",
-            () -> new BrickFurnace(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+            () -> new BrickFurnace(BlockBehaviour.Properties.copy(Blocks.BRICKS).noOcclusion()));
 
     public static final RegistryObject<Block> WOODEN_FURNACE = registerBlock("wooden_furnace_block",
-            () -> new WoodenFurnace(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+            () -> new WoodenFurnace(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

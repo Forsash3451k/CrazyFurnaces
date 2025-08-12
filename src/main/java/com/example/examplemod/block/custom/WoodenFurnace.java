@@ -18,13 +18,17 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
+//TODO rename WoodenFurnace to WoodenFurnaceBlock because of naming convention
+
 public class WoodenFurnace extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     public WoodenFurnace(Properties pProperties) {
-        super(Properties.of()
-                .strength(3.0f)
-                .sound(SoundType.STONE));
+       //s super(Properties.of()
+       //         .strength(2.0f)
+       //         .sound(SoundType.WOOD));
+
+        super(pProperties);
 
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }

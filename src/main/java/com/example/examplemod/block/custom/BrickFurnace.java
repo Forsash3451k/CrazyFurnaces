@@ -4,8 +4,6 @@ import com.example.examplemod.block.entity.BrickFurnaceBlockEntity;
 import com.example.examplemod.block.entity.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -23,13 +21,17 @@ import org.jetbrains.annotations.Nullable;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.server.level.ServerPlayer;
 
+//TODO rename BrickFurnace to BrickFurnaceBlock because of naming convention
+
 public class BrickFurnace extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     public BrickFurnace(Properties pProperties) {
-        super(Properties.of()
-                .strength(3.0f)
-                .sound(SoundType.STONE));
+        //super(Properties.of()
+        //        .strength(2.0f)
+        //        .sound(SoundType.STONE));
+
+        super(pProperties);
 
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }

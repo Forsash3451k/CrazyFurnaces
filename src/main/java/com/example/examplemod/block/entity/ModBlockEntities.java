@@ -12,7 +12,7 @@ import com.example.examplemod.block.ModBlocks;
 public class ModBlockEntities
 {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, CrazyFurnacesMod.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, CrazyFurnacesMod.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<BrickFurnaceBlockEntity>> BrickFurnace_BE =
             BLOCK_ENTITIES.register("gem_polishing_be", () ->

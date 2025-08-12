@@ -14,10 +14,11 @@ import com.example.examplemod.block.ModBlocks;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CrazyFurnacesMod.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CrazyFurnacesMod.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SAPPHIRE.get()))
+            () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModBlocks.BRICK_FURNACE.get()))
                     .title(Component.translatable("creativetab.tutorial_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(Items.DIAMOND);
@@ -29,6 +30,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.SAPPHIRE_BLOCK.get());
                         pOutput.accept(ModBlocks.WOODEN_FURNACE.get());
                         pOutput.accept(ModBlocks.BRICK_FURNACE.get());
+
+                        pOutput.accept(ModItems.AMOGUS.get());
                     })
                     .build());
 
